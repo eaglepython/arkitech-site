@@ -22,3 +22,4 @@
 
 .coach-companion-download{color:var(--accent);font-size:11px;text-decoration:underline;text-decoration-color:#68785b;text-underline-offset:3px}
 .project-readings{display:grid;gap:10px;padding-left:20px;color:var(--muted);font-size:12px;line-height:1.55}.project-readings a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.project-readings small{display:block;margin-top:2px;color:var(--faint);font-size:11px;line-height:1.55}
+.assessment-question-card{scroll-margin-top:16px}
