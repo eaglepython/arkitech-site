@@ -1,7 +1,7 @@
 (()=>{
  'use strict';
- const $=selector=>document.querySelector(selector),PUBLIC_ORIGIN='https://eaglepython.github.io';let generation=0,provider='local',models=[],active={agent:'tutor',question:'',artifact:''};
- const isPublicSite=location.origin===PUBLIC_ORIGIN;
+ const $=selector=>document.querySelector(selector),PUBLIC_ORIGINS=new Set(['https://eaglepython.github.io','https://arkitech1.netlify.app']);let generation=0,provider='local',models=[],active={agent:'tutor',question:'',artifact:''};
+ const isPublicSite=PUBLIC_ORIGINS.has(location.origin);
  const localBase=()=>isPublicSite?'http://127.0.0.1:4173/api/local-llm':location.origin+'/api/local-llm';
  const agents={tutor:'Act as a Socratic quantitative research tutor. Diagnose the learner’s understanding, give the smallest useful hint, ask a focused question, and give one next step. Do not complete graded work.',reviewer:'Act as a rigorous and constructive quantitative research reviewer. Check assumptions, timing, leakage, costs, uncertainty, edge cases, reproducibility, and the strength of evidence. Ask precise questions rather than replacing the learner’s analysis.',planner:'Act as a pragmatic study planner. Use the learner’s question and context to suggest an ordered recall, practice, and review plan. Do not claim employer readiness.',interviewer:'Act as a quantitative role interviewer. Ask the learner to state assumptions, reason aloud, and inspect edge cases. Do not reveal a complete solution.',challenger:'Act as an adversarial research challenger. Look for alternative explanations, selection effects, implementation failure, and evidence that could falsify the claim.'};
  function open(){ $('#coach-modal').hidden=false }
